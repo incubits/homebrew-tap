@@ -2,9 +2,9 @@ cask "deter" do
   arch arm: "arm64", intel: "x86_64"
 
   # version + sha256 are rewritten by .github/workflows/release.yml on each tag.
-  version "0.1.2"
-  sha256 arm:   "f96f062df195e96e20b1d3487cdc7ab420ec4c3306e20580bb5e6e7fd84ac7de",
-         intel: "66a7b6063911c48854cc05c302bc25ed1f8fa08e478f0a257b380b0a17e9ab7a"
+  version "0.1.3"
+  sha256 arm:   "f6b5199b2e03c4380c930ef25da6799e95822fc99e62958e39b7646c4ca19fbc",
+         intel: "8268cb07593c516c4093c1328a01454938c2212c9b354bc14d03c2f1a89c4465"
 
   # Source stays private (github.com/incubits/deter); only the built tarball is
   # published to the PUBLIC mirror below, so `brew install` needs no token.
@@ -16,7 +16,7 @@ cask "deter" do
   homepage "https://github.com/incubits/deter"
 
   # The tarball is laid out flat: the `deter` binary sits next to the asset tree
-  # (image/, brokers/, broker/, bin/, shims/) it discovers at runtime by walking
+  # (image/, brokers/, broker/, shims/) it discovers at runtime by walking
   # up from its own path. Symlinking the binary is all that's needed.
   binary "deter"
 
@@ -32,12 +32,11 @@ cask "deter" do
   caveats <<~EOS
     deter sandboxes whatever repo you're in; it needs, on the HOST:
       • Docker Desktop or Podman  (auto-detected; override with DETER_DOCKER)
-      • python3  (macOS Command Line Tools) — used by the host clipboard watcher
 
     Get started:
       cd ~/code/my-project
       deter init          # writes ./deter.yaml
-      deter doctor        # checks docker/podman + python3
+      deter doctor        # checks docker/podman
       deter run claude    # first run builds images, then drops you into the agent
   EOS
 
