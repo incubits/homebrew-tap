@@ -2,9 +2,9 @@ cask "deter" do
   arch arm: "arm64", intel: "x86_64"
 
   # version + sha256 are rewritten by .github/workflows/release.yml on each tag.
-  version "0.1.12"
-  sha256 arm:   "be6bb4f73cee5d032f1b32a07e636c441daa1da70b3ca0eb90b7d299deda1759",
-         intel: "f45f2b9143e9d314c20de5abbee7b72877af2646a309d905291404cdb15025df"
+  version "0.1.13"
+  sha256 arm:   "60dfaa0be782b3d814979eabc2e47675b2050502729e660781712e2221e695bc",
+         intel: "694c64b3518949d47ef1290a5ba2d799b1ebf418738ec7b9eb29c25c67e9b008"
 
   # Source stays private (github.com/incubits/deter); only the built tarball is
   # published to the PUBLIC mirror below, so `brew install` needs no token.
